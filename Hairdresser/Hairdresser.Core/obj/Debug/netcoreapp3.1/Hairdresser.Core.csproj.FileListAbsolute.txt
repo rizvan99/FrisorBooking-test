@@ -1,0 +1,16 @@
+C:\Users\Rizvan\Desktop\Hairdresser_Test\Hairdresser\Hairdresser.Core\bin\Debug\netcoreapp3.1\Hairdresser.Core.deps.json
+C:\Users\Rizvan\Desktop\Hairdresser_Test\Hairdresser\Hairdresser.Core\bin\Debug\netcoreapp3.1\Hairdresser.Core.runtimeconfig.json
+C:\Users\Rizvan\Desktop\Hairdresser_Test\Hairdresser\Hairdresser.Core\bin\Debug\netcoreapp3.1\Hairdresser.Core.runtimeconfig.dev.json
+C:\Users\Rizvan\Desktop\Hairdresser_Test\Hairdresser\Hairdresser.Core\bin\Debug\netcoreapp3.1\Hairdresser.Core.dll
+C:\Users\Rizvan\Desktop\Hairdresser_Test\Hairdresser\Hairdresser.Core\bin\Debug\netcoreapp3.1\Hairdresser.Core.pdb
+C:\Users\Rizvan\Desktop\Hairdresser_Test\Hairdresser\Hairdresser.Core\bin\Debug\netcoreapp3.1\Hairdresser.Core.Filter.dll
+C:\Users\Rizvan\Desktop\Hairdresser_Test\Hairdresser\Hairdresser.Core\bin\Debug\netcoreapp3.1\Hairdresser.Core.Filter.pdb
+C:\Users\Rizvan\Desktop\Hairdresser_Test\Hairdresser\Hairdresser.Core\obj\Debug\netcoreapp3.1\Hairdresser.Core.csproj.AssemblyReference.cache
+C:\Users\Rizvan\Desktop\Hairdresser_Test\Hairdresser\Hairdresser.Core\obj\Debug\netcoreapp3.1\Hairdresser.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rizvan\Desktop\Hairdresser_Test\Hairdresser\Hairdresser.Core\obj\Debug\netcoreapp3.1\Hairdresser.Core.AssemblyInfoInputs.cache
+C:\Users\Rizvan\Desktop\Hairdresser_Test\Hairdresser\Hairdresser.Core\obj\Debug\netcoreapp3.1\Hairdresser.Core.AssemblyInfo.cs
+C:\Users\Rizvan\Desktop\Hairdresser_Test\Hairdresser\Hairdresser.Core\obj\Debug\netcoreapp3.1\Hairdresser.Core.csproj.CoreCompileInputs.cache
+C:\Users\Rizvan\Desktop\Hairdresser_Test\Hairdresser\Hairdresser.Core\obj\Debug\netcoreapp3.1\Hairdresser.Core.csproj.CopyComplete
+C:\Users\Rizvan\Desktop\Hairdresser_Test\Hairdresser\Hairdresser.Core\obj\Debug\netcoreapp3.1\Hairdresser.Core.dll
+C:\Users\Rizvan\Desktop\Hairdresser_Test\Hairdresser\Hairdresser.Core\obj\Debug\netcoreapp3.1\Hairdresser.Core.pdb
+C:\Users\Rizvan\Desktop\Hairdresser_Test\Hairdresser\Hairdresser.Core\obj\Debug\netcoreapp3.1\Hairdresser.Core.genruntimeconfig.cache
