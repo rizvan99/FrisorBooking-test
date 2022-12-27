@@ -54,12 +54,7 @@ namespace Hairdresser.Core.Application.Implementation
             ValidateEntity(entity);
             try
             {
-                var result = _repository.Create(entity);
-                if (result == null)
-                {
-                    throw new ReplyIsNullOrEmptyException("Der kom ikke noget svar fra databasen");
-                }
-                return result;
+                return _repository.Create(entity);
             }
             catch (Exception e)
             {
