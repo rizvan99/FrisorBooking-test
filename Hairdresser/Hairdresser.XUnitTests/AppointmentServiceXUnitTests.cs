@@ -27,7 +27,7 @@ namespace Hairdresser.XUnitTests
             //Arrange
             var appointment = new Appointment()
             {
-                AppointmentDateTime = DateTime.Now,
+                AppointmentDateTime = DateTime.Now.AddHours(3),
                 CustomerID = 1,
                 EmployeeID = 2,
                 TreatmentID = 1,
@@ -54,7 +54,7 @@ namespace Hairdresser.XUnitTests
             //Arrange
             var appointment = new Appointment()
             {
-                AppointmentDateTime = DateTime.Now,
+                AppointmentDateTime = DateTime.Now.AddHours(1),
                 CustomerID = 1,
                 EmployeeID = 2,
                 TreatmentID = 0,
@@ -68,6 +68,48 @@ namespace Hairdresser.XUnitTests
             Assert.Throws<EntityDataMissingException>(() => service.Create(appointment));
             _AppointmentRep.Verify(repo => repo.Create(appointment), Times.Never);
         }
+
+        [Fact]
+        public void CreateAppointmentWithDateInPast_ThrowException()
+        {
+            // Arrange
+            var appointment = new Appointment()
+            {
+                AppointmentDateTime = DateTime.Now.AddDays(-1),
+                CustomerID = 1,
+                EmployeeID = 2,
+                TreatmentID = 1,
+                Status = 0,
+            };
+
+            var service = new AppointmentService(_AppointmentRep.Object);
+
+            //Act & Assert
+            Assert.Throws<ArgumentException>(() => service.Create(appointment));
+            _AppointmentRep.Verify(repo => repo.Create(appointment), Times.Never);
+        }
+
+        [Fact]
+        public void CreateAppointmentWithDateOverOneYear_ThrowException()
+        {
+            // Arrange
+            var appointment = new Appointment()
+            {
+                AppointmentDateTime = DateTime.Now.AddYears(1).AddDays(1),
+                CustomerID = 1,
+                EmployeeID = 2,
+                TreatmentID = 1,
+                Status = 0,
+            };
+
+            var service = new AppointmentService(_AppointmentRep.Object);
+
+            //Act & Assert
+            Assert.Throws<EntityDataMissingException>(() => service.Create(appointment));
+            _AppointmentRep.Verify(repo => repo.Create(appointment), Times.Never);
+        }
+
+
         [Fact]
         public void CreateAppointmentWithNullInputTest()
         {
@@ -135,7 +177,7 @@ namespace Hairdresser.XUnitTests
             // ARRANGE
             var appointment = new Appointment()
             {
-                AppointmentDateTime = DateTime.Now,
+                AppointmentDateTime = DateTime.Now.AddHours(3),
                 CustomerID = 1,
                 EmployeeID = 2,
                 TreatmentID = 1,
@@ -158,7 +200,7 @@ namespace Hairdresser.XUnitTests
             // ARRANGE
             var appointment = new Appointment()
             {
-                AppointmentDateTime = DateTime.Now,
+                AppointmentDateTime = DateTime.Now.AddHours(1),
                 CustomerID = 1,
                 EmployeeID = 2,
                 TreatmentID = 0,
