@@ -23,7 +23,7 @@ Scenario: Create appointment unsuccesfully
 	Then the outcomse should throw an <error>
 
 	Examples: 
-	| appointmentDate_AddDays | error |
+	| appointmentDate_AddDays | error                                               |
 	| -1                      | 'Tidspunkt for behandling kan ikke være i fortiden' |
-	| 366                     | 'Du kan højest booke din tid et år frem' |
-	| 500                     | 'Du kan højest booke din tid et år frem' |
+	| 366                     | 'Du kan højest booke din tid et år frem'            |
+	| 500                     | 'Du kan højest booke din tid et år frem'            |

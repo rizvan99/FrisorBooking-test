@@ -26,6 +26,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Hairdresser.Core\Hairdresser.Core.csproj" />
+    <ProjectReference Include="..\Hairdresser.Infrastructure\Hairdresser.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

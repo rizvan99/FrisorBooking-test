@@ -2,6 +2,7 @@
 using Hairdresser.Core.Application.Interfaces;
 using Hairdresser.Core.Domain.Interfaces;
 using Hairdresser.Core.Entities;
+using Hairdresser.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Moq;
 using System;
@@ -15,17 +16,22 @@ namespace Hairdresser.SpecFlow.StepDefinitions
     [Binding]
     public class CreateAppointmentStepDefinitions
     {
-        
-        private readonly Mock<IAppointmentRepository> appointmentRepo;
-        
+
+        private IAppointmentRepository appointmentRepo;
+        private AppointmentService appointmentService;
 
         Appointment appointment = new Appointment();
         Appointment resultAppointment = new Appointment();
+        Exception _actualException;
 
         public CreateAppointmentStepDefinitions()
         {
-            appointmentRepo = new Mock<IAppointmentRepository>();
+            var mock = new Mock<IAppointmentRepository>();
+            mock.Setup(_ => _.Create(It.IsAny<Appointment>())).Returns(new Appointment());
+
+            appointmentRepo = mock.Object;
             
+            appointmentService = new AppointmentService(appointmentRepo);
         }
 
         // Standard appointment we can call and use for our tests
@@ -51,9 +57,17 @@ namespace Hairdresser.SpecFlow.StepDefinitions
         [When(@"we call CreateAppointment")]
         public void WhenWeCallCreateAppointment()
         {
-            var service = new AppointmentService(appointmentRepo.Object);
-            resultAppointment = service.Create(appointment);
-            Console.WriteLine(resultAppointment.ToString());
+            //var service = new AppointmentService(appointmentRepo.Object);
+            try
+            {
+                resultAppointment = appointmentService.Create(appointment);
+                Console.WriteLine(resultAppointment);
+            }
+            catch (Exception e)
+            {
+                _actualException = e;
+            }
+            
         }
 
         [Then(@"the outcome should be (.*)")]
@@ -63,9 +77,15 @@ namespace Hairdresser.SpecFlow.StepDefinitions
             if(resultAppointment is Appointment)
             {
                 isSame = true;
-                
             }
             Assert.Equal(isSame, result);
+        }
+
+        [Then(@"the outcomse should throw an (.*)")]
+        public void ThenTheOutcomseShouldThrowAn(string p0)
+        {
+            var something = new object();
+            Assert.Equal(p0, _actualException.Message);
         }
 
     }

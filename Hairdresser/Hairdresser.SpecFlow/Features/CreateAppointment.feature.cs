@@ -155,7 +155,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("we call CreateAppointment", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 23
- testRunner.Then(string.Format("the outcomse should throw an {0}", error), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("the outcomse should throw an \'{0}\'", error), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
