@@ -128,14 +128,14 @@ this.ScenarioInitialize(scenarioInfo);
         [Xunit.SkippableTheoryAttribute(DisplayName="Create appointment unsuccesfully")]
         [Xunit.TraitAttribute("FeatureTitle", "CreateAppointment")]
         [Xunit.TraitAttribute("Description", "Create appointment unsuccesfully")]
-        [Xunit.InlineDataAttribute("-1", "\'Tidspunkt for behandling kan ikke være i fortiden\'", new string[0])]
-        [Xunit.InlineDataAttribute("366", "\'Du kan højest booke din tid et år frem\'", new string[0])]
-        [Xunit.InlineDataAttribute("500", "\'Du kan højest booke din tid et år frem\'", new string[0])]
-        public void CreateAppointmentUnsuccesfully(string appointmentDate_AddDays, string error, string[] exampleTags)
+        [Xunit.InlineDataAttribute("-1", "Tidspunkt for behandling kan ikke være i fortiden", new string[0])]
+        [Xunit.InlineDataAttribute("366", "Du kan højest booke din tid et år frem", new string[0])]
+        [Xunit.InlineDataAttribute("500", "Du kan højest booke din tid et år frem", new string[0])]
+        public void CreateAppointmentUnsuccesfully(string appointmentDateFail_AddDays, string error, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("appointmentDate_AddDays", appointmentDate_AddDays);
+            argumentsOfScenario.Add("appointmentDateFail_AddDays", appointmentDateFail_AddDays);
             argumentsOfScenario.Add("error", error);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create appointment unsuccesfully", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 20
@@ -149,13 +149,13 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 21
- testRunner.Given("the appointment date is <assignmentDate_AddDays>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("the appointment date is {0}", appointmentDateFail_AddDays), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 22
  testRunner.When("we call CreateAppointment", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 23
- testRunner.Then(string.Format("the outcomse should throw an \'{0}\'", error), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("the outcomse should throw an {0}", error), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
