@@ -35,6 +35,10 @@ namespace Hairdresser.Core.Application.Implementation
             {
                 throw new EntityDataMissingException("Du kan højest booke din tid et år frem");
             }
+            if (entity.AppointmentDateTime < DateTime.Now)
+            {
+                throw new ArgumentException("Tidspunkt for behandling kan ikke være i fortiden");
+            }
             if (entity.TreatmentID == 0)
             {
                 throw new EntityDataMissingException("Vælg venligst hvilket arbejde der skal udføres");
